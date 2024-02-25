@@ -1,0 +1,43 @@
+{
+    "manifest_version": 3,
+    "name": "网页划词翻译",
+    "version": "0.0.1",
+    "description": "网页划词翻译Chrome 插件",
+    "icons": {
+      "16": "assets/icon/icon_16.png",
+      "48": "assets/icon/icon_48.png",
+      "128": "assets/icon/icon_128.png"
+    },
+    "action": {
+      "default_title": "网页划词翻译",
+      "default_icon": "assets/icon/icon_16.png"
+    },
+    "background": {
+      "service_worker": "src/background/background.js"
+    },
+    "permissions": ["tabs", "storage", "activeTab", "webNavigation", "scripting", "sidePanel","contextMenus"],
+    "host_permissions": ["*://*/*"],
+    "content_scripts": [
+      {
+        "js": [
+          "src/content/content.js"
+        ],
+        "matches": [
+          "<all_urls>"
+        ],
+        "all_frames": true,
+        "run_at": "document_end",
+        "match_about_blank": true
+      }
+    ],
+    "options_page": "src/options/index.html",
+    "side_panel": {
+        "default_path": "src/sidePanel/index.html"
+    },
+    "web_accessible_resources": [
+        {
+          "resources": ["js/*", "assets/*", "*", "*/"],
+          "matches": ["http://*/*", "https://*/*"]
+        }
+      ]
+  }
