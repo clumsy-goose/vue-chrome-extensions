@@ -1,0 +1,52 @@
+@import './base.css';
+
+::-webkit-scrollbar {
+  height: 8px;
+  width: 4px;
+  background-color: inherit;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e1e1e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #c4c4c4;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+  background-color: inherit;
+}
+
+#app {
+  /* max-width: 1280px; */
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.icon{
+  svg{
+    display: block;
+  }
+  :hover{
+    cursor: pointer;
+  }
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
